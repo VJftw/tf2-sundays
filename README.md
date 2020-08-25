@@ -22,6 +22,7 @@ $ ansible-playbook -i tf2.vjpatel.me, main.yml --user root
  - [ ] support adding sv_password from ansible-vault?
  - [ ] parameterise more things
  - [ ] custom MOTD
+ - [ ] `nav_generate` via ansible for all maps
 
 # Credits
  - https://github.com/servers-tf/provisioners
