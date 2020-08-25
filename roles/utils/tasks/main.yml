@@ -1,0 +1,25 @@
+---
+- name: Install Utility Packages
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - htop
+    - wget
+    - psmisc
+    - lsof
+    - vim
+    - unzip
+    - tree
+    - sysstat
+    - jq
+    - sudo
+
+- name: add root to sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%root'
+    line: '%root ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
